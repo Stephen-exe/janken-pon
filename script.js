@@ -1,25 +1,25 @@
-var wins = 0;
-var ties = 0;
-var losses = 0;
+let wins = 0;
+let ties = 0;
+let losses = 0;
 
-var options = ["R", "P", "S"];
+let options = ["R", "P", "S"];
 
-var playRPS = function () {
-  var userChoice = window.prompt("Type R, P, or S:");
+let playRPS = function () {
+  let userChoice = window.prompt("Type R, P, or S:");
 
   if (!userChoice) {
     return;
   }
   userChoice = userChoice.toUpperCase();
 
-  var index = Math.floor(Math.random() * options.length);
-  var computerChoice = options[index];
+  let index = Math.floor(Math.random() * options.length);
+  let computerChoice = options[index];
 
   window.alert("Opponent chose " + computerChoice);
 
   if (userChoice === computerChoice) {
     ties++;
-    window.alert(< "Tch, it`s a tie!");
+    window.alert("Tch, it`s a tie!");
 
   } else if (
     (userChoice === "R" && computerChoice === "S") ||
@@ -29,20 +29,25 @@ var playRPS = function () {
     wins++;
     window.alert("You've won this time..");
 
-  } else {
+  } else if (
     losses++;
-    window.alert("Muah haha! You lost!");
-  }
+  window.alert("Muah haha! You lost!");
+ ) else
+(userChoice
+)
 
-  window.alert(
-    "Stats:\nWins: " + wins + "\nLosses: " + losses + "\nTies: " + ties
-  );
 
-  var playAgain = window.confirm("Play again?");
+}
 
-  if (playAgain) {
-    playRPS();
-  }
+window.alert(
+  "Stats:\nWins: " + wins + "\nLosses: " + losses + "\nTies: " + ties
+);
+
+let playAgain = window.confirm("Play again?");
+
+if (playAgain) {
+  playRPS();
+}
 };
 
 playRPS();
