@@ -18,6 +18,7 @@ let playRPS = function () {
   if (userChoice !== "R" && userChoice !== "P" && userChoice !== "S") {
     window.alert("Try again dum dum");
     playRPS();
+    return;
   }
 
   window.alert("Opponent chose " + computerChoice);
