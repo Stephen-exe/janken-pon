@@ -15,6 +15,11 @@ let playRPS = function () {
   let index = Math.floor(Math.random() * options.length);
   let computerChoice = options[index];
 
+  if (userChoice !== "R" && userChoice !== "P" && userChoice !== "S") {
+    window.alert("Try again dum dum");
+    playRPS();
+  }
+
   window.alert("Opponent chose " + computerChoice);
 
   if (userChoice === computerChoice) {
@@ -29,25 +34,20 @@ let playRPS = function () {
     wins++;
     window.alert("You've won this time..");
 
-  } else if (
+  } else {
     losses++;
-  window.alert("Muah haha! You lost!");
- ) else
-(userChoice
-)
+    window.alert("Muah haha! You lost!");
+  }
 
+  window.alert(
+    "Stats:\nWins: " + wins + "\nLosses: " + losses + "\nTies: " + ties
+  );
 
-}
+  let playAgain = window.confirm("Play again?");
 
-window.alert(
-  "Stats:\nWins: " + wins + "\nLosses: " + losses + "\nTies: " + ties
-);
-
-let playAgain = window.confirm("Play again?");
-
-if (playAgain) {
-  playRPS();
-}
+  if (playAgain) {
+    playRPS();
+  }
 };
 
 playRPS();
